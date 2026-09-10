@@ -7,13 +7,13 @@ import java.util.Objects;
 import java.util.UUID;
 
 public class Libro {
-    private UUID id;
-    private String titulo;
-    private String isbn;
-    private LocalDateTime fechaDePublicacion;
-    private Genero genero;
-    private int paginas;
-    private Autor autor;
+    private final UUID id;
+    private final String titulo;
+    private final String isbn;
+    private final LocalDateTime fechaDePublicacion;
+    private final Genero genero;
+    private final int paginas;
+    private final Autor autor;
 
     public static Libro factory(String titulo, String isbn, LocalDateTime fechaDePublicacion, Genero genero, int paginas, Autor autor) {
         UUID idGenerado = UUID.randomUUID();
@@ -65,62 +65,30 @@ public class Libro {
     public UUID getId() {
         return id;
     }
-
     public String getTitulo() {
         return titulo;
     }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
     public String getIsbn() {
         return isbn;
     }
-
-    public void setIsbn(String isbn) {
-        this.isbn = isbn;
-    }
-
     public LocalDateTime getFechaDePublicacion() {
         return fechaDePublicacion;
     }
-
-    public void setFechaDePublicacion(LocalDateTime fechaDePublicacion) {
-        this.fechaDePublicacion = fechaDePublicacion;
-    }
-
     public Genero getGenero() {
         return genero;
     }
-
-    public void setGenero(Genero genero) {
-        this.genero = genero;
-    }
-
     public int getPaginas() {
         return paginas;
     }
-
-    public void setPaginas(int paginas) {
-        this.paginas = paginas;
-    }
-
     public Autor getAutor() {
         return autor;
     }
-
-    public void setAutor(Autor autor) {
-        this.autor = autor;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Libro libro = (Libro) o;
         return Objects.equals(id, libro.id);
     }
-
     @Override
     public int hashCode() {
         return Objects.hashCode(id);
@@ -128,8 +96,6 @@ public class Libro {
 }
 
 /*
-
-
 Restricciones:
 No pueden existir dos Libros con el mismo ISBN
 El id debe ser un UUID generado por la lógica de dominio, y no por estrategia de base de datos

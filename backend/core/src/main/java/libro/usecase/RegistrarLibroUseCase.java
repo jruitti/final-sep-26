@@ -6,7 +6,7 @@ import libro.modelo.Libro;
 import libro.output.RegistrarLibroRepository;
 
 public class RegistrarLibroUseCase implements RegistrarLibroInput {
-    private RegistrarLibroRepository registrarLibroRepository;
+    private final RegistrarLibroRepository registrarLibroRepository;
 
     public RegistrarLibroUseCase(RegistrarLibroRepository registrarLibroRepository){
         this.registrarLibroRepository = registrarLibroRepository;
